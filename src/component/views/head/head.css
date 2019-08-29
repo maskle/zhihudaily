@@ -1,0 +1,35 @@
+.header{
+    position:fixed;
+    width:100vw;
+    height: 1.60rem;
+    left:0;
+    top:0;
+    overflow: hidden;
+    /* margin-bottom:1.6rem; */
+    background:#00a2ed;
+}
+.none{
+    display: none
+}
+.listicon,.clockicon,.moreicon{
+    font-size: 0.56rem !important;
+    color:#fff !important;
+    line-height: 1.8rem !important;
+    float: left !important;
+}
+.listicon{
+    margin-left: 0.56rem !important;
+}
+.clockicon{
+    margin-left: 5.3rem !important;
+}
+.moreicon{
+    font-size: 0.8rem !important;
+    margin-left:0.56rem !important;
+}
+.toptext{
+    color:#fff;
+    line-height: 1.6rem;
+    margin-left:1.07rem;
+    float: left;
+}
