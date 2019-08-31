@@ -1,0 +1,9 @@
+.content {
+  margin-top: 1.85rem;
+  margin-left: 0.24rem;
+  /* margin-top: 0.25rem; */
+}
+.collectpage {
+  height: 100vh;
+  overflow: auto;
+}

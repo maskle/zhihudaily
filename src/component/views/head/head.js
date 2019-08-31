@@ -1,23 +1,112 @@
 import React, { Component } from "react";
 // import querystring from "querystring";
-import "./head.css"
-import {Icon} from "antd"
-class daiding extends Component {
+import "./head.css";
+import { withRouter } from "react-router-dom";
+import { Icon } from "antd";
+import Leftpage from "../../pages/leftpage/leftpage";
+class head extends Component {
   state = {
-    params: {}
+    params: {},
+    isappear: false
   };
- 
+  goback() {
+    this.props.history.go(-1);
+  }
+  listappear() {
+    this.setState({
+      isappear: true
+    });
+  }
+  disappear() {
+    this.setState({
+      isappear: false
+    });
+  }
+  tocomment(id) {
+    localStorage.setItem("commentsnum", this.props.props.commentnum);
+    this.props.history.push("/comments/" + id);
+  }
   render() {
     return (
-    <div className="header">
-        {this.props.props.listicon? <Icon type="menu" className="listicon" />:<div className="none"></div>}
-        {this.props.props.toptext?<h2 className="toptext">{this.props.props.toptext}</h2>:<h2 className="none"></h2>}
-        {this.props.props.clockicon?<Icon type="bell" className="clockicon" />:<div class="none"></div>}
-        {this.props.props.pointsicon?<Icon type="more" className="moreicon" />:<div class="none"></div>
-        }
-    </div>
-    )
-
+      <div className="header">
+        {this.props.props.listicon ? (
+          <Icon
+            type="menu"
+            className="listicon"
+            onTouchEnd={() => this.listappear()}
+          />
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.backicon ? (
+          <Icon
+            type="arrow-left"
+            className="listicon"
+            onTouchEnd={() => this.goback()}
+          />
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.toptext ? (
+          <h2 className="toptext">{this.props.props.toptext}</h2>
+        ) : (
+          <h2 className="none">123</h2>
+        )}
+        {this.props.props.clockicon ? (
+          <Icon type="bell" className="clockicon" />
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.pointsicon ? (
+          <Icon type="more" className="moreicon" />
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.shareicon ? (
+          <Icon type="share-alt" className="shareicon" />
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.collecticon ? (
+          <Icon type="star" theme="filled" className={this.props.props.iscollect?"collecticon1":"collecticon"} onTouchEnd={()=>this.props.oncollect()} />
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.commentnum!==undefined? (
+          <div
+            className="commentnum"
+            onTouchEnd={() => this.tocomment(this.props.props.id)}
+          >
+            <Icon type="message" className="messageicon" />
+            <span>{this.props.props.commentnum}</span>
+          </div>
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.agreenum!==undefined ? (
+          <div className="agreenum">
+            <Icon type="like" className="likeicon" />
+            <span>{this.props.props.agreenum}</span>
+          </div>
+        ) : (
+          <div className="none"></div>
+        )}
+        {this.props.props.formicon ? (
+          <Icon
+            type="form"
+            className="formicon"
+          />
+        ) : (
+          <div className="none"></div>
+        )}
+        <Leftpage
+          isappear={this.state.isappear}
+          onHide={() => {
+            this.disappear();
+          }}
+        ></Leftpage>
+      </div>
+    );
   }
 }
-export default daiding;
+export default withRouter(head);

@@ -1,0 +1,41 @@
+.long{
+    margin-top:1.6rem;
+    background: #fff;
+}
+.short{
+    background: #fff;
+}
+.long_tit,.short_tit{
+    width:100%;
+    height: 1.43rem;
+    font-size: 0.4rem;
+    line-height: 1.4rem;
+    border-bottom: 3px solid #dedede;
+    color:#242424;
+    box-sizing: border-box;
+    padding-left:0.5rem;
+    margin-bottom: 0;
+    /* background: red; */
+}
+.nolong{
+    width:100%;
+    height: 17.28rem;
+}
+.nolong img{
+    width:2.82rem;
+    height: 3.38rem;
+    margin-left: 3.99rem;
+    margin-top:6.95rem;
+}
+.short_tit h2{
+    float: left;
+    font-size: 0.4rem;
+    line-height: 1.4rem;
+}
+.downicon{
+    float: right;
+    font-size: 0.4rem;
+    /* line-height: 1.4rem; */
+    margin-top:0.5rem;
+    margin-right: 0.6rem;
+}

@@ -6,10 +6,12 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
 // import 'antd/lib/index.css'; 
 import 'antd/dist/antd.css'
+import $ from "jquery"
 import axios from 'axios'
 import qs from 'qs'
 Component.prototype.axios=axios
 Component.prototype.qs=qs;
+Component.prototype.$=$;
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 

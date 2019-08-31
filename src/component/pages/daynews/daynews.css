@@ -1,0 +1,11 @@
+.news{
+    width:10.32rem;
+    margin-left: 0.24rem;
+    margin-top:0.25rem
+}
+.title{
+    line-height: 1.6rem;
+    font-size: 0.4rem;
+    margin-left: 0.26rem;
+    color:#707070;
+}

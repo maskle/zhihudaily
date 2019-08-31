@@ -1,0 +1,21 @@
+.newsmodel{
+    width:10.32rem;
+    height: 3rem;
+    box-shadow: 4px 4px 4px #ccc;
+    margin-top:0.24rem;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+.lefttxt{
+    font-size:0.5rem;
+    line-height: 0.6rem;
+    font-weight: bold;
+    width:6.46rem;
+    float: left;
+}
+.newsmodel img{
+    float: right;
+    width:2.48rem;
+    height: 2.17rem;
+}

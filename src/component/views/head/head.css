@@ -1,35 +1,74 @@
-.header{
-    position:fixed;
-    width:100vw;
-    height: 1.60rem;
-    left:0;
-    top:0;
-    overflow: hidden;
-    /* margin-bottom:1.6rem; */
-    background:#00a2ed;
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 1.6rem;
+  left: 0;
+  top: 0;
+  /* overflow: hidden; */
+  /* margin-bottom:1.6rem; */
+  background: #00a2ed;
+  z-index: 100;
 }
-.none{
-    display: none
+.none {
+  display: none;
 }
-.listicon,.clockicon,.moreicon{
-    font-size: 0.56rem !important;
-    color:#fff !important;
-    line-height: 1.8rem !important;
-    float: left !important;
+.listicon,
+.clockicon,
+.moreicon,
+.shareicon,
+.collecticon,
+.formicon,
+.commentnum,
+.agreenum,
+.collecticon1 {
+  font-size: 0.56rem !important;
+  color: #fff !important;
+  line-height: 1.8rem !important;
+  float: left !important;
 }
-.listicon{
-    margin-left: 0.56rem !important;
+.listicon {
+  margin-left: 0.56rem !important;
 }
-.clockicon{
-    margin-left: 5.3rem !important;
+/* .clockicon {
+  margin-left: 5.3rem !important;
+} */
+.moreicon {
+  font-size: 0.8rem !important;
+  margin-left: 0.56rem !important;
 }
-.moreicon{
-    font-size: 0.8rem !important;
-    margin-left:0.56rem !important;
+.toptext {
+  color: #fff;
+  line-height: 1.6rem;
+  margin-left: 1.07rem;
+  float: left;
+  width: 6.3rem;
+  font-size: 0.6rem;
 }
-.toptext{
-    color:#fff;
-    line-height: 1.6rem;
-    margin-left:1.07rem;
-    float: left;
+.shareicon {
+  margin-left: 2.8rem !important;
+}
+.collecticon1 {
+  margin-left: 1rem;
+  color: yellow !important;
+}
+.collecticon {
+  margin-left: 1rem;
+}
+.commentnum {
+  margin-left: 0.9rem;
+  margin-top: -0.1rem;
+}
+.commentnum span {
+  margin-left: 0.24rem;
+}
+.agreenum {
+  margin-left: 0.4rem;
+  margin-top: -0.1rem;
+}
+.agreenum span {
+  margin-left: 0.24rem;
+}
+.formicon {
+  float: right !important;
+  margin-right: 0.2rem;
 }
