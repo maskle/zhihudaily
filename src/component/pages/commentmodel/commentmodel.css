@@ -1,12 +1,12 @@
 .commentmodel {
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
   padding-left: 0.5rem;
   padding-top:0.5rem;
   padding-bottom:0.55rem;
   border-top: 3px solid #e0e0e0;
   /* background: red; */
-  border-bottom: 3px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 .headphoto {
   float: left;
@@ -45,8 +45,8 @@
 .like span{
     margin-left: 0.2rem
 }
-.content{
-    margin-top:0.37rem;
+.comment_content{
+    margin-top:0.37rem !important;
     line-height: 0.7rem;
     font-size: 0.44rem;
     color:#323232;

@@ -1,3 +1,11 @@
+#comment_page{
+    /* transform: translateY(-10rem) */
+    transition: all 1s;
+    position: relative;
+}
+/* .totop{
+     transform: translateY(-12rem) 
+} */
 .long{
     margin-top:1.6rem;
     background: #fff;
@@ -10,7 +18,7 @@
     height: 1.43rem;
     font-size: 0.4rem;
     line-height: 1.4rem;
-    border-bottom: 3px solid #dedede;
+    border-bottom: 1px solid #dedede;
     color:#242424;
     box-sizing: border-box;
     padding-left:0.5rem;

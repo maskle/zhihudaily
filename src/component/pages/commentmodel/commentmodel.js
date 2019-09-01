@@ -29,7 +29,7 @@ class commentmodel extends Component {
               <span>{this.props.cominfo.likes}</span>
             </p>
           </div>
-          <p className="content">{this.props.cominfo.content}</p>
+          <p className="comment_content">{this.props.cominfo.content}</p>
           <p className="time">{this.state.time}</p>
         </div>
       </div>

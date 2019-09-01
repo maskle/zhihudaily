@@ -81,7 +81,7 @@ class detail extends Component {
     else{
       arr.push(this.collectinfo)
       localStorage.setItem("collectinfo",JSON.stringify(arr));
-      var headinfo=this.state.headinfo;
+      headinfo=this.state.headinfo;
       headinfo.iscollect=true;
       this.setState({
         headinfo

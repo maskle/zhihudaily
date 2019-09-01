@@ -4,10 +4,12 @@ import "./head.css";
 import { withRouter } from "react-router-dom";
 import { Icon } from "antd";
 import Leftpage from "../../pages/leftpage/leftpage";
+import Share from "../../pages/share/share";
 class head extends Component {
   state = {
     params: {},
-    isappear: false
+    isappear: false,
+    shareing: false
   };
   goback() {
     this.props.history.go(-1);
@@ -25,6 +27,19 @@ class head extends Component {
   tocomment(id) {
     localStorage.setItem("commentsnum", this.props.props.commentnum);
     this.props.history.push("/comments/" + id);
+  }
+  startshare() {
+    this.setState({
+      shareing: true
+    });
+  }
+  hideshare(){
+    this.setState({
+      shareing: false
+    });
+  }
+  tonotice(){
+    this.props.history.push("/notice")
   }
   render() {
     return (
@@ -53,7 +68,7 @@ class head extends Component {
           <h2 className="none">123</h2>
         )}
         {this.props.props.clockicon ? (
-          <Icon type="bell" className="clockicon" />
+          <Icon type="bell" className="clockicon" onTouchEnd={()=>this.tonotice()} />
         ) : (
           <div className="none"></div>
         )}
@@ -63,16 +78,27 @@ class head extends Component {
           <div className="none"></div>
         )}
         {this.props.props.shareicon ? (
-          <Icon type="share-alt" className="shareicon" />
+          <Icon
+            type="share-alt"
+            className="shareicon"
+            onTouchEnd={() => this.startshare()}
+          />
         ) : (
           <div className="none"></div>
         )}
         {this.props.props.collecticon ? (
-          <Icon type="star" theme="filled" className={this.props.props.iscollect?"collecticon1":"collecticon"} onTouchEnd={()=>this.props.oncollect()} />
+          <Icon
+            type="star"
+            theme="filled"
+            className={
+              this.props.props.iscollect ? "collecticon1" : "collecticon"
+            }
+            onTouchEnd={() => this.props.oncollect()}
+          />
         ) : (
           <div className="none"></div>
         )}
-        {this.props.props.commentnum!==undefined? (
+        {this.props.props.commentnum !== undefined ? (
           <div
             className="commentnum"
             onTouchEnd={() => this.tocomment(this.props.props.id)}
@@ -83,7 +109,7 @@ class head extends Component {
         ) : (
           <div className="none"></div>
         )}
-        {this.props.props.agreenum!==undefined ? (
+        {this.props.props.agreenum !== undefined ? (
           <div className="agreenum">
             <Icon type="like" className="likeicon" />
             <span>{this.props.props.agreenum}</span>
@@ -92,10 +118,7 @@ class head extends Component {
           <div className="none"></div>
         )}
         {this.props.props.formicon ? (
-          <Icon
-            type="form"
-            className="formicon"
-          />
+          <Icon type="form" className="formicon" />
         ) : (
           <div className="none"></div>
         )}
@@ -105,6 +128,9 @@ class head extends Component {
             this.disappear();
           }}
         ></Leftpage>
+        {this.state.shareing ? (
+          <Share offshare={() => this.hideshare()}></Share>
+        ) : null}
       </div>
     );
   }

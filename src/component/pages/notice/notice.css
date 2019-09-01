@@ -1,0 +1,21 @@
+.notice_content{
+    width:100vw;height: 100vh;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+.this_clockicon{
+    font-size: 0.8rem !important;
+    color: #ccc !important;
+    line-height: 1.8rem !important;
+    margin-top:10rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.nonotice{
+    font-size: 0.56rem;
+    color:#ccc;
+    text-align: center;
+    /* margin-top: 0.3rem; */
+    /* margin-top:12.5rem; */
+}

@@ -1,0 +1,49 @@
+.share_cover{
+    width:100vw;
+    height: 100vh;
+    overflow: hidden;
+    touch-action: none;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    position: fixed;
+    top:0;
+    left:0;
+}
+.message_box{
+    width:9.3rem;
+    height: 10.88rem;
+    background: #fff;
+    position: absolute;
+    top:50%;left:50%;
+    margin-left: -4.65rem;
+    margin-top:-5.44rem;
+}
+.share_title{
+    font-size: 0.56rem;
+    margin-top:0.7rem;
+    margin-left: 0.6rem;
+    font-weight: bold;
+}
+.share_list{
+    margin-left: 0.96rem;
+    margin-top:0.6rem;
+    padding-left: 0 !important;
+}
+.share_list li{
+    width:1.8rem;
+    height: 2.2rem;
+    float: left;
+    margin-right: 0.98rem;
+    margin-bottom: 0.7rem;
+}
+.share_list li img{
+    width:1.62rem;
+    height: 1.62rem;
+    margin-left: 0.09rem;
+}
+.share_list li p{
+    text-align: center;
+    margin:0 !important;
+    margin-top:0.26rem !important;
+    font-size: 0.34rem;
+}

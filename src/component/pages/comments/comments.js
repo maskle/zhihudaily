@@ -5,6 +5,9 @@ import sofa from "../../../assets/images/sofa.jpg";
 import { Icon } from "antd";
 import Commentmodel from "../commentmodel/commentmodel";
 class comments extends Component {
+  totop={
+    transform:"translateY(-4.27rem)"
+  }
   state = {
     headinfo: {
       backicon: true,
@@ -39,6 +42,12 @@ class comments extends Component {
   }
   getshort() {
     var id = this.props.match.params.id;
+    var long=document.getElementsByClassName("long")[0];
+    var scrolltop=document.documentElement.scrollTop;
+    var longtop=long.scrollHeight;
+    console.log(longtop)
+    var totopnum=longtop+scrolltop;
+    console.log(totopnum)
     if (this.state.ismount === false) {
       this.setState(
         {
@@ -73,40 +82,44 @@ class comments extends Component {
     return (
       <div>
         <Head props={this.state.headinfo}></Head>
-        <div className="long">
-          <h2 className="long_tit">{this.state.longcom.length}条长评</h2>
-          {this.state.longcom.length === 0 ? (
-            <div className="nolong">
-              <img src={sofa} alt="" />
-            </div>
-          ) : (
-            <div>
-              <div className="short_con">
-                {this.state.longcom.map(item => {
-                  return (
-                    <Commentmodel cominfo={item} key={item.id}></Commentmodel>
-                  );
-                })}
+        <div id="comment_page" style={this.state.isappear?this.totop:null}>
+          <div className="long">
+            <h2 className="long_tit">{this.state.longcom.length}条长评</h2>
+            {this.state.longcom.length === 0 ? (
+              <div className="nolong">
+                <img src={sofa} alt="" />
               </div>
-            </div>
-          )}
-        </div>
-        <div className="short">
-          <div className="short_tit">
-            <h2>{localStorage.getItem("shortnum")}条短评</h2>
-            <Icon
-              type={this.state.isappear ? "up" : "down"}
-              className="downicon"
-              onTouchEnd={() => this.getshort()}
-            />
+            ) : (
+              <div>
+                <div className="short_con">
+                  {this.state.longcom.map(item => {
+                    return (
+                      <Commentmodel cominfo={item} key={item.id}></Commentmodel>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
-          <div
-            className="short_con"
-            style={this.state.isappear ? null : this.appearclass}
-          >
-            {this.state.shortcom.map(item => {
-              return <Commentmodel cominfo={item} key={item.id}></Commentmodel>;
-            })}
+          <div className="short">
+            <div className="short_tit">
+              <h2>{localStorage.getItem("shortnum")}条短评</h2>
+              <Icon
+                type={this.state.isappear ? "up" : "down"}
+                className="downicon"
+                onTouchEnd={() => this.getshort()}
+              />
+            </div>
+            <div
+              className="short_con"
+              style={this.state.isappear ? null : this.appearclass}
+            >
+              {this.state.shortcom.map(item => {
+                return (
+                  <Commentmodel cominfo={item} key={item.id}></Commentmodel>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
