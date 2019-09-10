@@ -27,6 +27,7 @@ class daynews extends Component {
           getday=daynum1+"  "+daynum2;
         }
         else{
+          var titles=["今日热闻"]
           getday=titles[titlenumber];
         }
         this.setState({

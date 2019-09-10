@@ -1,13 +1,16 @@
+.totalpage{
+    background: #fff;
+}
 #comment_page{
-    /* transform: translateY(-10rem) */
     transition: all 1s;
-    position: relative;
+    /* position: fixed; */
+    background: #fff;
+    margin-top:1.6rem;
 }
 /* .totop{
      transform: translateY(-12rem) 
 } */
 .long{
-    margin-top:1.6rem;
     background: #fff;
 }
 .short{
@@ -27,7 +30,7 @@
 }
 .nolong{
     width:100%;
-    height: 17.28rem;
+    height: 70vh;
 }
 .nolong img{
     width:2.82rem;

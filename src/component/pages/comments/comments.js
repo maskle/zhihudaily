@@ -6,7 +6,10 @@ import { Icon } from "antd";
 import Commentmodel from "../commentmodel/commentmodel";
 class comments extends Component {
   totop={
-    transform:"translateY(-4.27rem)"
+    // transform:""
+  }
+  tobottom={
+    // marginTop:0
   }
   state = {
     headinfo: {
@@ -42,36 +45,36 @@ class comments extends Component {
   }
   getshort() {
     var id = this.props.match.params.id;
-    var long=document.getElementsByClassName("long")[0];
-    var scrolltop=document.documentElement.scrollTop;
-    var longtop=long.scrollHeight;
-    console.log(longtop)
-    var totopnum=longtop+scrolltop;
-    console.log(totopnum)
+    var short_site=document.getElementsByClassName("short")[0];
+    // var scrolltop=document.documentElement.scrollTop;
+    var short_top=-short_site.offsetTop/100;
+    console.log(short_top);
+    this.totop={transform:"translateY("+short_top+"rem)"}
+    // this.totop.transform="translateY("+short_top+"rem)"
     if (this.state.ismount === false) {
-      this.setState(
-        {
-          isappear: true
-        },
-        () => {
-          this.axios({
-            url: "/story/" + id + "/short-comments",
-            method: "get"
-          }).then(res => {
-            console.log(res.data.comments);
+
+      this.axios({
+        url: "/story/" + id + "/short-comments",
+        method: "get"
+      }).then(res => {
+        console.log(res.data.comments);
+        this.setState(
+          {
+            shortcom: res.data.comments
+          },
+          () => {
+            this.setState({
+              ismount: true
+            });
             this.setState(
               {
-                shortcom: res.data.comments
-              },
-              () => {
-                this.setState({
-                  ismount: true
-                });
+                isappear: true
               }
             );
-          });
-        }
-      );
+          }
+        );
+      });
+      
     } else {
       this.setState({
         isappear: !this.state.isappear
@@ -80,9 +83,9 @@ class comments extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="totalpage">
         <Head props={this.state.headinfo}></Head>
-        <div id="comment_page" style={this.state.isappear?this.totop:null}>
+        <div id="comment_page" style={this.state.isappear?this.totop:this.tobottom}>
           <div className="long">
             <h2 className="long_tit">{this.state.longcom.length}条长评</h2>
             {this.state.longcom.length === 0 ? (

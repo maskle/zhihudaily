@@ -42,7 +42,7 @@ class leftpage extends Component {
               <div className="headtitle">
                 <img src={imgpic} alt="" />
               </div>
-              <h2 className="username">中公吴彦祖</h2>
+              <h2 className="username">maskle</h2>
             </div>
             <div className="doublebtn">
               <div className="leftbtn" onTouchEnd={()=>this.tocollect()}>
